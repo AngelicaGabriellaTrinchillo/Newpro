@@ -1,6 +1,6 @@
 let columns = 10;
-let rows = 10;
-
+let rows = 50;
+let testo = ":<>:";
 //
 
 let font;
@@ -25,6 +25,12 @@ function draw() {
   background("blue");
   orbitControl();
 
+  let cam;
+
+  cam = createCamera();
+  cam.setPosition(100, 350, 100);
+  cam.lookAt(0, 0, 0);
+
   let angle = 360 / columns;
   let diameter = textSize();
 
@@ -40,7 +46,7 @@ function draw() {
       const m = map(a, -1, 1, 0, textSize());
       push();
       translate(m, textSize() * (j - rows / 2), 0);
-      text("Ciao", 0, 0);
+      text(testo, 0, 0);
       pop();
     }
     pop();
